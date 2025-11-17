@@ -1,0 +1,4 @@
+settings:
+    api_key: 
+    database_url: postgresql+psycopg2://driftnavi:driftnavi@localhost:5432/driftnavi
+

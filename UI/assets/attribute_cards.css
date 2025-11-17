@@ -1,0 +1,94 @@
+/* 
+  Attribute Card Styles for Target Attribute Selection
+  This CSS provides styling for the card-based attribute selector component
+*/
+
+.attribute-cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.attribute-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.attribute-card:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.attribute-card-selected {
+    border: 2px solid #516395;
+    box-shadow: 0 0 0 2px rgba(81, 99, 149, 0.3);
+}
+
+.attribute-card-disabled {
+    opacity: 0.7;
+    background-color: #f8f8f8;
+}
+
+.attribute-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 8px;
+}
+
+.attribute-card-name {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.attribute-card-type {
+    padding: 3px 8px;
+    border-radius: 12px;
+    background-color: #f0f0f0;
+    font-size: 12px;
+    color: #666;
+}
+
+.attribute-card-body {
+    font-size: 14px;
+}
+
+.attribute-card-stats-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.attribute-card-check {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.attribute-card-x {
+    color: #9C27B0;
+    font-weight: bold;
+}
+
+.attribute-card-primary-only {
+    color: #9C27B0;
+}
+
+.attribute-card-primary-stats {
+    color: #614385;
+}
+
+.attribute-card-secondary-stats {
+    color: #516395;
+}

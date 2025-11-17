@@ -1,0 +1,2031 @@
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation-name: fadeIn;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+  }
+  
+  .table-container > * {
+      margin-bottom: 20px;
+  }
+  
+  
+  /* Overall layout */
+  .body {
+      background-color:#f5f5f5; /* Grey background */
+  }
+  
+  /* For Chrome, Safari, and Edge */
+  ::-webkit-scrollbar {
+      width: 12px;  /* Scrollbar width */
+  }
+  
+  ::-webkit-scrollbar-track {
+      background: #f1f1f1;  /* Track color */
+      border-radius: 10px;   /* Track corner rounding */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+      background: #888;      /* Handle color */
+      border-radius: 10px;   /* Handle corner rounding */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+      background: #555;      /* Handle color on hover */
+  }
+  
+  /* For Firefox */
+  * {
+      scrollbar-width: thin;          /* "auto" or "thin" */
+      scrollbar-color: #614385 white;  /* Handle and track color */
+  }
+  
+  /* Blue banner styling */
+  .banner {
+      background:linear-gradient(to right, #614385, #516395);
+      color: white;
+      padding: 1px 20px;
+      /*border-radius: 8px 8px 0 0;*/
+      border: black;
+      box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      width: 100%;
+      height: 75px;
+      margin-bottom: 10px;
+      display: flex;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: bold;
+      font-size: larger;
+  }
+  
+  @media (max-width: 768px) {
+      .banner {
+          height: auto;
+          min-height: 75px;
+          flex-wrap: wrap;
+          padding: 10px;
+      }
+  }
+  
+  .section {
+  
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, spread radius, color */
+      background-color: white; /* Card background color */
+      margin: 50px 0;
+      padding: 20px;
+      position: relative;
+      border: 1px solid #d0d0d0;
+      /* Add other styling for the card as needed */
+  }
+  
+  .section:empty {
+      display: none;
+  }
+  
+  .card {
+      border-radius: 12px; /* Rounded borders for the card */
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2); /* Horizontal offset, vertical offset, blur radius, spread radius, color */
+      background-color: white; /* Card background color */
+      padding: 10px;
+      position: relative;
+      margin: 10px 0 20px;
+      /* Add other styling for the card as needed */
+  }
+  
+  .upload{
+  
+      height: 60px;
+      line-height: 60px;
+      border-width: 1px;
+      border-style: dashed;
+      border-radius: 5px;
+      text-align: center;
+      margin: 16px;
+      background-color: #ebf2fa;
+  }
+  
+  .query{
+  
+      margin: 5px;
+      background-color: white;
+      border-radius: 6px;
+  
+      /*box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); */
+  }
+  
+  .query-title{
+      font-weight: bold;
+      padding: 10px;
+      color: #614385;
+  }
+  
+  .op-highlight {
+      margin: 15px 10px 10px 15px;
+      color: white; /* 白色字体 */
+      background-color: #1a8cff; /* 蓝色背景 */
+      border-radius: 15px; /* 圆角矩形 */
+      padding: 5px 10px; /* 内边距，确保文字有一些留白 */
+      display: inline-block; /* 让背景适配文字大小 */
+      font-size: medium;
+      font-weight: bold;
+  }
+  
+  .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .flex-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  .center-align-div{
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-bottom: 20px;
+      margin-top: 20px;
+  }
+  
+  .left-align-div{
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 10px;
+      gap: 10px;
+  }
+  
+  .right-align-div{
+      display: flex;
+      justify-content: flex-end;
+      margin: 10px;
+      gap: 10px;
+  }
+  
+  .query-header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+  }
+  
+  #export-format-dropdown {
+      flex: 1
+  }
+  
+  .download-button{
+      background-color: #614385; /* Blue background */
+      color: white;
+      border-radius: 20px;
+      border-color: #614385;
+      padding: 3px 10px;
+      cursor: pointer;
+  }
+  
+  .query-area{
+      background-color: #ffffff; /* White background */
+      border-radius: 5px;
+      /*border: 1px solid burlywood;*/
+      width: 100%;
+      overflow-y: auto;
+      height: 700px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      padding: 10px;
+  }
+  
+  @media (max-width: 768px) {
+      .query-area {
+          height: calc(100vh - 200px);
+          min-height: 400px;
+      }
+  }
+  
+  .RAG-area{
+      background-color: #f7f7f7; /* White background */
+      border-radius: 5px;
+      border: 1px solid white;
+      width: 100%;
+      overflow-y: auto;
+      margin-top: 20px;
+      margin-bottom: 10px;
+      padding: 10px;
+      text-align: justify;
+      height: 500px;
+  }
+  
+  @media (max-width: 768px) {
+      .RAG-area {
+          height: calc(100vh - 400px);
+          min-height: 300px;
+      }
+  }
+  
+  .query-input{
+      width: 100%;
+      border-radius: 20px;
+      border: 1px solid #ffffff;
+      height: 50px;
+      padding-left: 10px;
+      background: #f5f5f5;
+  }
+  
+  .primary-button {
+      background-color: #614385; /* Blue background */
+      color: white;
+      border-radius: 20px;
+      border: none;
+      padding: 5px 20px;
+      cursor: pointer;
+      /*box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);*/
+  
+  }
+
+  /* Gradient purple button (matches pipeline stage active gradient) */
+  .gradient-primary-button {
+      background: linear-gradient(to right, #614385, #516395);
+      color: #ffffff;
+      border: none;
+      border-radius: 20px;
+      padding: 6px 18px;
+      cursor: pointer;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+  }
+  .gradient-primary-button:hover {
+      filter: brightness(1.05);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transform: translateY(-1px);
+  }
+  /* Ensure white text inside chat bubbles overrides llm-msg color */
+  .llm-msg .gradient-primary-button {
+      color: #ffffff !important;
+  }
+  .llm-msg .gradient-primary-button:hover {
+      color: #ffffff !important;
+  }
+  
+  .dataset-name{
+      color: #614385;
+  }
+  
+  .delete-button {
+      background-color: red; /* Blue background */
+      color: white;
+      border-radius: 10px;
+      border: none;
+      padding: 5px 20px;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  
+  }
+  
+  .save-data-button {
+      background-color: #ffb366; /* Blue background */
+      color: white;
+      border-radius: 10px;
+      border: none;
+      padding: 5px 20px;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  
+  }
+  
+  .secondary-button {
+      background-color: green;
+      color: white;
+      border-radius: 10px;
+      border: none;
+      padding: 5px 20px;
+      cursor: pointer;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  
+  .load-button {
+      background-color: white; /* Blue background */
+      color: #614385;
+      border-radius: 10px;
+      border-color: #614385;
+      padding: 3px 10px;
+      cursor: pointer;
+      margin-right: 10px;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  }
+  .load-button:hover {
+      background-color: whitesmoke;
+  }
+  
+  .download-button:hover {
+      background-color: whitesmoke;
+  }
+  /* Send button hover effect */
+  .primary-button:hover {
+      background-color: #0056b3;
+  }
+  
+  .save-data-button:hover {
+      background-color: #ff8000;
+  }
+  
+  .secondary-button:hover {
+      background-color: seagreen;
+  }
+  
+  .secondary-title{
+      margin: 0 10px 10px 0;
+      color: #614385;
+  }
+  
+  .user-msg{
+      text-align: left;
+      padding: 10px;
+      background-color: #516395;
+      color: white;
+      border-radius: 15px;
+      margin: 5px 5px 5px 50%;
+      width: fit-content;
+      max-width: 50%;
+      word-wrap: break-word;
+      display: block;
+      float: right;
+  }
+  
+  @media (max-width: 768px) {
+      .user-msg {
+          max-width: 80%;
+          margin: 5px 5px 5px 20%;
+      }
+  }
+  
+  .llm-msg{
+      text-align: left;
+      padding: 15px;  /* increase padding for better reading experience */
+      background-color: #f5f4ed;
+      color: black;
+      border-radius: 15px;
+      margin: 5px 5px 5px 5px;  /* adjust margin, make message almost full width */
+      width: fit-content;
+      max-width: 95%;  /* from 75% to 95%, almost full width of chat box */
+      word-wrap: break-word;
+      display: inline-block
+  }
+  
+  @media (max-width: 768px) {
+      .llm-msg {
+          max-width: 95%;  /* mobile also use 95% width */
+          margin: 5px 5px 5px 5px;  /* mobile also use full width margin */
+          padding: 12px;  /* inner padding for mobile */
+      }
+  }
+  
+  .llm-text{
+      text-align: left;
+      padding: 10px;
+      background-color: #f5f4ed;
+      color: black;
+      border-radius: 15px;
+      margin: 5px;
+      width: fit-content;
+      max-width: 100%;
+      word-wrap: break-word;
+      display: inline-block
+  }
+  
+  .logo{
+      width: 80px;
+  }
+  
+  .title{
+      font-size: 48px;
+      color:#f5f5f5;
+  }
+  
+  @media (max-width: 768px) {
+      .logo {
+          width: 60px;
+          height: auto;
+      }
+      
+      .title {
+          font-size: calc(24px + 1.5vw);
+          margin: 0 15px;
+      }
+      
+      .navbar {
+          flex-wrap: wrap;
+      }
+      
+      .menu-item {
+          margin: 5px;
+      }
+      
+      .nav-item {
+          margin-left: 15px;
+      }
+  }
+  
+  .navbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+  }
+  
+  .menu-item {
+      margin: 5px;
+  }
+  
+  .nav-item{
+      background-color: transparent;
+      color: white;
+      margin-left: 15px;
+      cursor: pointer;
+  }
+  
+  .nav-item:hover{
+      color:coral;
+  }
+  
+  .nav-item:focus{
+      color:white;
+  }
+  
+  .dropdown-toggle{
+      color: white;
+  }
+  
+  .dropdown-toggle:hover{
+      color: coral;
+  }
+  
+  .dropdown-toggle:focus{
+      color: white;
+  }
+  
+  .bg-transparent {
+      background-color: transparent;
+  }
+  
+  .figure-modal {
+      width: 80vw !important; 
+      max-width: none !important;
+  }
+  
+  .next-suggested-question {
+      display: block;
+      padding: 10px;
+      background: #e5f6ff;
+      box-shadow: none;
+      border-radius: 20px;
+      text-align: justify;
+      margin-bottom: 5px;
+      cursor: pointer;
+  }
+  .chat-history-card {
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin-bottom: 1rem;
+  }
+  
+  .chat-history-card .card-header {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #e9ecef;
+  }
+  
+  .chat-message {
+      margin-bottom: 15px;
+      padding: 10px;
+      border-radius: 10px;
+  }
+  
+  .user-message {
+      background-color: #e6f2ff;
+      margin-left: 20%;
+      text-align: justify;
+      word-wrap: break-word;
+  }
+  
+  .assistant-message {
+      background-color: #f0f0f0;
+      margin-right: 5%;  /* 减少右边距，从20%改为5% */
+      text-align:left;
+      word-wrap: break-word;
+      width: 95%;  /* 设置为95%宽度而不是100%，保持与llm-msg一致 */
+      padding: 15px;  /* 添加内边距以提供更好的阅读体验 */
+      border-radius: 15px;  /* 添加圆角以保持视觉一致性 */
+  }
+  
+  .message-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5px;
+      font-size: 0.8em;
+      color: #666;
+  }
+  
+  .message-role {
+      font-weight: bold;
+  }
+  
+  .message-time {
+      font-style: italic;
+  }
+  
+  .message-content {
+      word-wrap: break-word;
+  }
+  
+  .profile-area {
+      /*background-color: #ffffff;*/
+      /*border: 1px solid #e0e0e0;*/
+      /*border-radius: 8px;*/
+      overflow: hidden;
+  }
+  
+  .profile-avatar {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      overflow: hidden;
+      background-color: #f0f0f0;
+  }
+  
+  .profile-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+  }
+  
+  .profile-header {
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .profile-name {
+      margin: 0;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #000000;
+  }
+  
+  .profile-title {
+      margin: 0;
+      color: #666666;
+      font-size: 0.875rem;
+  }
+  
+  .profile-more-info-button {
+      background-color: #614385;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      width: 100%;  /* Changed from 'align-self': 'flex-start' */
+      margin-top: 8px;
+  }
+  
+  .menu-profile {
+      background-color: #614385;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      padding: 4px 12px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      margin-top: 8px;
+      width: fit-content;
+  }
+  
+  .edit-icon {
+      cursor: pointer;
+      color: #614385;
+      font-size: 0.8rem;
+      vertical-align: middle;
+  }
+  
+  .scrollable-conversation-body {
+      scrollbar-width: thin;
+      scrollbar-color: #888 #f1f1f1;
+  }
+  
+  .send-button {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #614385;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+  }
+  
+  .send-button:hover {
+      background-color: #4285F4;
+  }
+  
+  .scrollable-conversation-body::-webkit-scrollbar {
+      width: 6px;
+  }
+  
+  .scrollable-conversation-body::-webkit-scrollbar-track {
+      background: #f1f1f1;
+  }
+  
+  .scrollable-conversation-body::-webkit-scrollbar-thumb {
+      background: #888;
+      border-radius: 3px;
+  }
+  
+  .scrollable-conversation-body::-webkit-scrollbar-thumb:hover {
+      background: #555;
+  }
+  
+  .data-table tr:hover {
+      background-color: lightblue !important;
+      color: black !important;
+  }
+  
+  .commands_editor {
+      border-radius: 5px;
+      border: 1px solid white;
+      margin-bottom: 10px;
+      margin-top: 5px;
+      background: #f7f7f7;
+      overflow: auto;
+  }
+  
+  .commands_result {
+      border-radius: 5px;
+      border: 1px solid white;
+      margin-bottom: 10px;
+      margin-top: 5px;
+      padding: 10px;
+      background: #f7f7f7;
+      height: 400px;
+      overflow: auto;
+  }
+  
+  .commands_editor:disabled {
+      cursor: not-allowed;
+  }
+  
+  .settings-body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+  }
+  
+  .settings-content {
+      display: flex;
+      flex: 1;
+      flex-wrap: nowrap;
+      background-color:#e5e2f5ad;
+  }
+  
+  .settings-body #middle-column {
+      flex: 1;
+      
+  }
+  
+.settings-body #right-column {
+      background-color: white;
+      margin-top: -10px;
+      padding: 10px;
+  }
+  
+  .settings-banner {
+      background-color:#e5e2f5ad;
+  }
+  
+  .settings-sidebar {
+      font-size: larger;
+      color: #483d8ba3 ;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+  }
+  
+  .nav-pills .nav-link.settings-sidebar.active {
+      background-color: #e8e5ff;
+      color: #483d8b;
+  }
+  
+  .settings-sidebar:hover {
+      background: #f4f2ff;
+      color: #483d8b;
+  }
+  
+  .prompt-card {
+      box-shadow: none;
+      border: none;
+  }
+  
+  .settings-prompt-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 16px;
+  }
+  
+  .settings-prompt-card-body {
+      padding-top: 0;
+      padding-bottom: 0;
+      min-height: 54px;
+  }
+  
+  .prompt-input {
+      width: 100%;
+      border: none;
+      background-color: #f7f7f7;
+      border-radius: 8px;
+      resize: none;
+  }
+  
+  .save-button {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 1rem;
+  }
+  
+  .prompt-button {
+      width: 130px;
+  }
+  
+  .survey-tooltip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+  
+  .backdrop-survey-modal {
+      background-image: linear-gradient(to right, #67b26f, #4ca2cd);
+      opacity: 0.9 !important;
+  }
+  
+  .content-survey-modal {
+      background-color: transparent;
+      border: none;
+  }
+  
+  .accordion-button:not(.collapsed) {
+      background-color: white;
+      padding: 10px;
+  }
+  
+  
+  /* Dataset info cards */
+  .dataset-info-card {
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      flex: 1;
+      min-width: 300px;
+  }
+
+  .dataset-info-card h5 {
+      color: #614385;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 8px;
+  }
+
+  .dataset-info-card p {
+      margin-bottom: 8px;
+  }
+  
+  .dataset-info-card.full-width {
+    flex: 1 0 100%;
+    width: 100%;
+    margin-right: 0;
+  }
+  
+  /* Dataset comparison styles */
+  .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      font-size: 14px;
+  }
+
+  .comparison-table th, .comparison-table td {
+      padding: 8px;
+      border: 1px solid #ddd;
+      text-align: center;
+  }
+
+  .comparison-table th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      color: #333;
+  }
+
+  .comparison-table tr:nth-child(even) {
+      background-color: #f9f9f9;
+  }
+
+  .comparison-table tr:hover {
+      background-color: #f1f1f1;
+  }
+
+  /* Chart title styles */
+  .chart-title {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 10px;
+      font-weight: bold;
+  }
+
+  .chart-subtitle {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 10px;
+  }
+
+  /* Distribution chart container */
+  #distribution-charts-container {
+      padding: 15px;
+      border: 1px solid #eaeaea;
+      border-radius: 5px;
+      background-color: #ffffff;
+      margin-top: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+
+  /* Selected cell info */
+  #selected-cell-info {
+      background-color: #f8f9fa;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      border-left: 4px solid #614385;
+  }
+
+  #selected-cell-info p {
+      margin: 5px 0;
+  }
+
+  /* Comparison summary styles */
+  #distribution-comparison-summary {
+      border-top: 1px solid #eaeaea;
+      padding-top: 15px;
+      margin-top: 15px;
+  }
+  
+  /* Dataset Statistics Table Styling */
+  .dataset-stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+
+  .dataset-stats-table th, .dataset-stats-table td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+  }
+
+  .dataset-stats-table th {
+      background-color: #f8f9fa;
+      font-weight: bold;
+      color: #333;
+  }
+
+  .dataset-stats-table tr:hover {
+      background-color: #f5f5f5;
+  }
+
+  .dataset-info-title {
+      margin-top: 10px;
+      margin-bottom: 15px;
+      color: #333;
+      font-weight: bold;
+  }
+
+  .missing-values-title {
+      margin-top: 20px;
+      margin-bottom: 10px;
+      color: #333;
+  }
+
+  .no-missing-values {
+      color: #28a745;
+      font-weight: bold;
+      margin-top: 15px;
+  }
+
+  .missing-values-chart {
+      margin-top: 10px;
+      border: 1px solid #e9ecef;
+      border-radius: 4px;
+      padding: 10px;
+      background-color: white;
+  }
+
+  .dataset-info-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      padding: 0 10px;
+  }
+
+  .dataset-info-card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 100%;
+      margin-bottom: 20px;
+  }
+
+  @media (min-width: 992px) {
+      .dataset-info-container {
+          flex-direction: row;
+          flex-wrap: wrap;
+      }
+      
+      .dataset-info-card {
+          flex: 1 0 45%;
+          margin-right: 20px;
+      }
+  }
+  
+  /* Adding responsive media queries for different screen sizes */
+  @media (max-width: 992px) {
+      .section {
+          margin: 30px 0;
+          padding: 15px;
+      }
+      
+      .card {
+          padding: 8px;
+          margin: 8px 0 15px;
+      }
+      
+      .query-input {
+          height: 45px;
+      }
+      
+      .primary-button, .secondary-button, .delete-button, .save-data-button {
+          padding: 5px 15px;
+      }
+  }
+  
+  @media (max-width: 768px) {
+      .query-header {
+          flex-direction: column;
+          align-items: flex-start;
+      }
+      
+      .center-align-div, .left-align-div, .right-align-div {
+          flex-wrap: wrap;
+      }
+      
+      /* Make the layout stack on mobile */
+#right-column, #middle-column {
+          margin-bottom: 20px;
+      }
+  }
+  
+  @media (max-width: 576px) {
+      .section {
+          margin: 20px 0;
+          padding: 10px;
+      }
+      
+      .card {
+          padding: 5px;
+          margin: 5px 0 10px;
+      }
+      
+      .query-input {
+          height: 40px;
+      }
+      
+      .primary-button, .secondary-button, .delete-button, .save-data-button {
+          padding: 4px 10px;
+          font-size: 0.9em;
+      }
+  }
+  
+  /* Command editor and console styles */
+  .commands_editor {
+      width: 100%;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+  }
+
+  .commands_editor .DashEditorComponent {
+      height: 500px !important;
+      min-height: 500px !important;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+  }
+
+  .commands_result {
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 15px;
+      margin-top: 10px;
+      max-height: 600px;
+      overflow-y: auto;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+  }
+
+  .commands_result pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      max-height: 400px;
+      overflow-y: auto;
+      padding: 10px;
+      margin: 10px 0;
+      background-color: #f0f0f0;
+      border-radius: 4px;
+  }
+
+  /* Highlight code sections */
+  .code-section {
+      background-color: #f0f0f0;
+      border-left: 3px solid #614385;
+      padding: 10px;
+      margin: 10px 0;
+      overflow-x: auto;
+  }
+
+  /* Line number styling */
+  .line-number {
+      color: #777;
+      display: inline-block;
+      width: 3em;
+      text-align: right;
+      margin-right: 1em;
+      user-select: none;
+  }
+
+  /* Highlight current line */
+  .current-line {
+      background-color: #fffbcc;
+  }
+
+  /* Error styling */
+  .error-line {
+      background-color: #ffe6e6;
+      border-left: 3px solid #ff4d4d;
+  }
+  
+  /* Code block with copy button styling - improved version */
+  .code-block-container {
+      position: relative;
+      background-color: #f8f9fa;
+      border: 1px solid #e1e4e8;
+      border-radius: 6px;
+      margin: 15px 0;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  .code-header {
+      background-color: #f1f1f1;
+      padding: 8px 12px;
+      border-bottom: 1px solid #e1e4e8;
+      display: flex;
+      justify-content: flex-end;
+  }
+
+  .copy-button {
+      background-color: #614385;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 5px 10px;
+      font-size: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 500;
+  }
+
+  .copy-button:hover {
+      background-color: #516395;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .copy-button:active {
+      background-color: #40507a;
+      transform: translateY(0);
+  }
+
+  .code-block-container pre {
+      margin: 0;
+      padding: 12px 15px;
+      overflow-x: auto;
+      background-color: transparent;
+      border: none;
+      max-height: 400px;
+  }
+
+  .code-block-container code {
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      white-space: pre;
+      display: block;
+      color: #333;
+      line-height: 1.5;
+  }
+
+  /* Add line number styling */
+  .code-block-container pre {
+      counter-reset: line;
+  }
+
+  .code-block-container code {
+      counter-increment: line;
+  }
+
+  /* Make sure indentation is preserved */
+  .code-block-container code {
+      tab-size: 4;
+      -moz-tab-size: 4;
+  }
+
+  /* Make table cells visibly clickable - targeted approach that won't affect the Python sandbox */
+  /* Target only the specific data tables we want to enhance */
+  #table-primary-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell,
+  #table-secondary-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell,
+  #table-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell,
+  #metrics-table .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell {
+    cursor: pointer !important;
+    position: relative !important;
+    transition: all 0.2s ease !important;
+  }
+
+  /* Apply hover effect only to our specific data tables */
+  #table-primary-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell:hover,
+  #table-secondary-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell:hover,
+  #table-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell:hover,
+  #metrics-table .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell:hover {
+    background-color: rgba(97, 67, 133, 0.35) !important;
+    box-shadow: inset 0 0 0 2px rgba(97, 67, 133, 0.8) !important;
+  }
+
+  /* Highlight for active cells - only in our specific tables */
+  #table-primary-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell.dash-cell-active,
+  #table-secondary-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell.dash-cell-active,
+  #table-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell.dash-cell-active,
+  #metrics-table .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell.dash-cell-active,
+  #table-primary-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell.focused,
+  #table-secondary-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell.focused,
+  #table-overview .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell.focused,
+  #metrics-table .dash-spreadsheet-container .dash-spreadsheet-inner table tbody tr td.dash-cell.focused {
+    background-color: rgba(97, 67, 133, 0.45) !important;
+    box-shadow: inset 0 0 0 2px rgba(97, 67, 133, 1) !important;
+    font-weight: 500 !important;
+  }
+
+  /* Ensure only the explicitly specified tables have pointer-events disabled on their cell content */
+  #table-primary-overview .dash-cell *,
+  #table-secondary-overview .dash-cell *,
+  #table-overview .dash-cell *,
+  #metrics-table .dash-cell * {
+    pointer-events: none !important;
+  }
+
+  /* Keep existing data-table hover style but make sure it doesn't interfere with the sandbox */
+  .data-table tr:hover {
+    background-color: lightblue !important;
+    color: black !important;
+  }
+
+  /* Info button styling */
+  .info-button {
+      background-color: #614385;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .info-button:hover {
+      background-color: #516395;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .info-button:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .info-button i {
+      font-size: 18px;
+  }
+
+  /* Pipeline tracker component */
+  .pipeline-tracker {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto;
+      position: relative;
+      z-index: 1;
+      width: 90%;
+      max-width: 800px;
+  }
+
+  .pipeline-tracker::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 5%;
+      width: 90%;
+      height: 2px;
+      background: linear-gradient(to right, #ccc, #ccc);
+      z-index: -1;
+  }
+
+  .pipeline-stage {
+      flex: 1;
+      text-align: center;
+      padding: 15px 5px;
+      border: 1px solid #ddd;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background-color: #f5f5f5;
+      color: #666;
+      font-weight: 500;
+      overflow: hidden;
+      margin: 0 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .pipeline-stage:not(:last-child)::after {
+      content: "→";
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #516395;
+      font-size: 20px;
+      font-weight: bold;
+      z-index: 3;
+  }
+
+  .pipeline-tracker .pipeline-stage {
+    background-color: white;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 30px;
+    min-width: 100px;
+    text-align: center;
+    transition: background-color .2s, color .2s, transform .2s;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
+  .pipeline-tracker .pipeline-stage.active {
+    background: linear-gradient(to right, #614385, #516395) !important;
+    color: white !important;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2) !important;
+    transform: translateY(-2px);
+  }
+  .pipeline-tracker .pipeline-stage.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .pipeline-stage.completed {
+      background-color: #e9ecef;
+      color: #495057;
+      border-color: #ced4da;
+  }
+
+  .pipeline-stage.disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      background-color: #f5f5f5;
+  }
+
+  .pipeline-stage:not(.disabled):hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .pipeline-stage-number {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      line-height: 24px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #ddd;
+      color: #333;
+      margin-right: 8px;
+      font-weight: bold;
+  }
+
+  .pipeline-stage.active .pipeline-stage-number {
+      background-color: white;
+      color: #614385;
+  }
+
+  .pipeline-stage-icon {
+      margin-right: 8px;
+      font-size: 14px;
+  }
+
+  @media (max-width: 768px) {
+      .pipeline-tracker {
+          width: 95%;
+      }
+      
+      .pipeline-stage {
+          padding: 10px 3px;
+          font-size: 12px;
+          margin: 0 5px;
+      }
+      
+      .pipeline-stage:not(:last-child)::after {
+          right: -10px;
+          font-size: 12px;
+      }
+      
+      .pipeline-stage-icon {
+          display: none;
+      }
+      
+      .pipeline-stage-number {
+          width: 18px;
+          height: 18px;
+          line-height: 18px;
+          font-size: 10px;
+          margin-right: 4px;
+      }
+  }
+  
+  /* Add card alignment rules */
+  #data-view, #chat-box {
+    height: calc(100vh - 150px);
+    margin-top: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  #right-column, #middle-column {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  /* Make the card bodies take full height and standardize padding */
+  .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px !important;
+  }
+
+  /* Keep chat area scrollable but contained */
+  #query-area {
+    flex: 1;
+    overflow-y: auto;
+    max-height: calc(100vh - 300px);
+    margin-top: 15px;
+  }
+
+  /* Table container sizing and consistent margins */
+  #table-loading {
+    max-height: calc(100vh - 300px);
+    overflow-y: auto;
+  }
+
+  /* Standardize card heading styles across both cards */
+  #data-view h5, #chat-box h4 {
+    color: #614385;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 10px 0 15px 0;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+
+  /* Table titles and subtitles consistency */
+  #data-view h5, .chart-subtitle, .secondary-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #614385;
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  /* Make primary and secondary dataset headings consistent */
+  #data-view .table-header {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+
+  /* Standardize buttons across both cards */
+  #data-view button, #chat-box button:not(#send-button) {
+    background-color: white;
+    border: 1px solid #eee;
+    border-radius: 4px;
+    color: #666;
+    transition: all 0.2s ease;
+  }
+
+  #data-view button:hover, #chat-box button:not(#send-button):hover {
+    background-color: #f5f5f5;
+    color: #333;
+  }
+
+  /* Context item card styles for Explain stage */
+  .context-item-card {
+      transition: all 0.2s ease;
+      cursor: pointer !important;
+      position: relative;
+      border: 1px solid #dee2e6 !important;
+  }
+
+  .context-item-card:hover {
+      background-color: #f8f9fa !important;
+      border-color: #adb5bd !important;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      transform: translateY(-1px);
+  }
+
+  .context-item-card:active {
+      background-color: #e9ecef !important;
+      transform: translateY(0);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+
+  /* Ensure pointer events are enabled */
+  .context-item-card * {
+      pointer-events: none;
+  }
+
+  .context-item-card {
+      pointer-events: auto;
+  }
+
+  /* Analysis panel styles */
+  #explain-analysis-panel {
+      min-height: 400px;
+  }
+
+  /* Analysis buttons styling */
+  .analysis-type-btn {
+      transition: all 0.2s ease;
+  }
+
+  .analysis-type-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  /* Context summary card styling */
+  .border-primary, .border-info, .border-success, .border-warning, .border-danger {
+      border-width: 2px !important;
+  }
+
+  /* Ensure explain component containers have proper heights */
+  #explain-context-items-panel {
+      min-height: 300px;
+      max-height: 600px;
+      overflow-y: auto;
+  }
+
+  #explain-analysis-results {
+      min-height: 200px;
+  }
+
+  /* Analysis Panel context expand button styling */
+  #explain-analysis-panel .btn-outline-primary {
+      color: #0d6efd;
+      border-color: #0d6efd;
+      transition: all 0.2s ease;
+  }
+
+  #explain-analysis-panel .btn-outline-primary:hover {
+      color: #ffffff;
+      background-color: #0d6efd;
+      border-color: #0d6efd;
+      transform: scale(1.05);
+  }
+
+  /* Analysis Panel expanded content animation */
+  #explain-analysis-panel [id*="context-detailed-content"] {
+      transition: all 0.3s ease-out;
+      overflow: hidden;
+  }
+
+  /* Styling for expanded content in Analysis Panel */
+  #explain-analysis-panel [id*="context-detailed-content"] h6 {
+      margin-top: 0;
+      margin-bottom: 15px;
+      color: #495057;
+      font-weight: 600;
+  }
+
+  #explain-analysis-panel [id*="context-detailed-content"] pre {
+      max-height: 250px;
+      overflow-y: auto;
+      font-size: 12px;
+      line-height: 1.4;
+      background-color: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 4px;
+      padding: 10px;
+  }
+
+  #explain-analysis-panel [id*="context-detailed-content"] p {
+      margin-bottom: 8px;
+  }
+
+  /* Better visual separation in Analysis Panel */
+  #explain-analysis-panel .border-primary,
+  #explain-analysis-panel .border-info,
+  #explain-analysis-panel .border-success,
+  #explain-analysis-panel .border-warning,
+  #explain-analysis-panel .border-danger {
+      border-width: 2px !important;
+      margin-bottom: 20px;
+  }
+
+  /* Layer 2 Context Boxes Consistent Styling */
+.context-simple-box {
+    transition: all 0.2s ease !important;
+    height: 70px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
+}
+
+/* Collapsible section style for chat-injected comparisons */
+.collapsible-section {
+    margin: 10px 0;
+}
+.collapsible-section > summary {
+    cursor: pointer;
+    font-weight: 600;
+    list-style: none;
+}
+.collapsible-section > summary::-webkit-details-marker {
+    display: none;
+}
+
+.context-simple-box:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    border-color: #007bff !important;
+}
+
+.context-simple-box:active {
+    transform: translateY(0px) !important;
+}
+
+/* Ensure all context boxes have consistent heights */
+.context-item-boxes .row > div {
+    height: 70px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
+}
+
+.context-item-boxes .card {
+    height: 70px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
+}
+
+.context-item-boxes .card-body {
+    height: 70px !important;
+    min-height: 70px !important;
+    max-height: 70px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+}
+
+
+
+/* Main container responsive design */
+#home-container {
+    margin: 0;
+    padding: 0;
+}
+
+#middle-column, #right-column {
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+/* Responsive column stacking */
+@media (max-width: 768px) {
+    #home-container {
+        flex-direction: column-reverse; /* Chat on top, main content below */
+    }
+    
+    #right-column {
+        margin-bottom: 1rem;
+        order: 1;
+    }
+    
+    #middle-column {
+        order: 2;
+    }
+    
+    /* Reduce container padding on mobile */
+    .container-fluid {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    #middle-column, #right-column {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    
+    /* Very small screens - full width */
+    .container-fluid {
+        padding-left: 4px !important;
+        padding-right: 4px !important;
+    }
+}
+
+/* Explain component container optimization */
+#explain-component-container {
+    width: 100% !important;
+    max-width: none !important;
+    overflow-x: hidden;
+}
+
+#explain-component-slide {
+    width: 100% !important;
+    max-width: none !important;
+}
+
+/* Data view card responsive */
+#data-view {
+    margin-bottom: 0;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    #data-view {
+        border-radius: 4px;
+    }
+}
+
+/* Explain phase responsive design */
+@media (max-width: 768px) {
+    /* Reduce padding on small screens */
+    .explain-panel {
+        padding: 10px !important;
+    }
+    
+    /* Make layer titles smaller on mobile */
+    .layer-title {
+        font-size: 1.1rem !important;
+    }
+    
+    /* Compact severity statistics cards */
+    .severity-card .card-body {
+        padding: 8px !important;
+    }
+    
+    .severity-card h5 {
+        font-size: 1rem !important;
+    }
+    
+    .severity-card .fa {
+        font-size: 1.2rem !important;
+    }
+    
+    /* Context boxes responsive */
+    .context-simple-box {
+        margin-bottom: 8px !important;
+    }
+    
+    .context-simple-box .card-body {
+        padding: 8px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Extra small screens - stack everything */
+    .explain-main-row > div {
+        margin-bottom: 1rem;
+    }
+    
+    /* Very compact severity cards */
+    .severity-card {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    .severity-card h5 {
+        font-size: 0.9rem !important;
+        margin: 0.25rem 0 !important;
+    }
+    
+    .severity-card small {
+        font-size: 0.7rem !important;
+    }
+    
+    .severity-card .fa {
+        font-size: 1rem !important;
+    }
+    
+    /* Context boxes grid adjustment */
+    .context-item-boxes .row {
+        --bs-gutter-x: 0.5rem;
+        --bs-gutter-y: 0.5rem;
+    }
+}
+
+/* General improvements */
+.explain-analysis-panel {
+    scrollbar-width: thin;
+    scrollbar-color: #6c757d transparent;
+}
+
+.explain-analysis-panel::-webkit-scrollbar {
+    width: 6px;
+}
+
+.explain-analysis-panel::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.explain-analysis-panel::-webkit-scrollbar-thumb {
+    background-color: #6c757d;
+    border-radius: 3px;
+}
+
+/* Layer spacing optimization */
+.layer-section {
+    margin-bottom: 1.5rem !important;
+}
+
+@media (max-width: 768px) {
+    .layer-section {
+        margin-bottom: 1rem !important;
+    }
+}
+
+/* ========================================
+   Pipeline Chat Buttons - New Feature
+   ======================================== */
+
+.pipeline-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.pipeline-section:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.pipeline-chat-buttons-container {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    flex-wrap: wrap;
+}
+
+.pipeline-chat-btn {
+    flex: 1;
+    min-width: 90px;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: white;
+    color: #333333 !important;  /* 白色底用黑色字体 - 强制覆盖 */
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.pipeline-chat-btn:hover:not(.disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    /* 悬停时保持颜色对比度：白色底保持黑色字体 */
+}
+
+.pipeline-chat-btn.active {
+    background: linear-gradient(135deg, #614385 0%, #516395 100%) !important;
+    color: white !important;  /* 紫色底用白色字体 - 强制覆盖 */
+    border-color: #614385 !important;
+    box-shadow: 0 4px 12px rgba(97, 67, 133, 0.3);
+}
+
+/* 确保active状态下的所有子元素都是白色 */
+.pipeline-chat-btn.active * {
+    color: white !important;
+}
+
+/* 确保active状态下的图标也是白色 */
+.pipeline-chat-btn.active i {
+    color: white !important;
+}
+
+/* 覆盖chat-box中的通用button样式 */
+#chat-box .pipeline-chat-btn {
+    color: #333333 !important;  /* 覆盖通用的灰色设置 */
+}
+
+#chat-box .pipeline-chat-btn.active {
+    background: linear-gradient(135deg, #614385 0%, #516395 100%) !important;
+    color: white !important;  /* 强制白色文字 */
+    border-color: #614385 !important;
+}
+
+#chat-box .pipeline-chat-btn.active * {
+    color: white !important;  /* 所有子元素都白色 */
+}
+
+.pipeline-chat-btn.disabled {
+    background: #f8f9fa;  /* 白色底 */
+    color: #6c757d;  /* 白色底用深灰色字体，提高可读性 */
+    cursor: not-allowed;
+    opacity: 0.6;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.pipeline-chat-btn.disabled:hover {
+    transform: none;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.pipeline-status-indicator {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #6c757d;
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 6px;
+    border: 1px solid #e9ecef;
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .pipeline-chat-buttons-container {
+        flex-direction: column;
+    }
+    
+    .pipeline-chat-btn {
+        flex: none;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .pipeline-section {
+        padding: 12px;
+    }
+}
+
+/* Animation for button state changes */
+@keyframes pulseGlow {
+    0% { box-shadow: 0 4px 12px rgba(97, 67, 133, 0.3); }
+    50% { box-shadow: 0 4px 16px rgba(97, 67, 133, 0.5); }
+    100% { box-shadow: 0 4px 12px rgba(97, 67, 133, 0.3); }
+}
+
+.pipeline-chat-btn.active {
+    animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Integration with existing chat styles */
+.pipeline-section h6 {
+    margin: 0 0 10px 0;
+    color: #495057;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   Column Type Comparison Table Fixes
+   ======================================== */
+
+/* Fix for column type comparison tables in chatbox - maintain consistent width when collapsed */
+.llm-msg:has([id*="chat-type-compare-bubble"]) {
+    width: 95% !important;  /* 强制设置固定宽度而不是fit-content */
+    max-width: 95% !important;
+}
+
+/* 备用方案：通过包含卡片的llm-msg来识别 */
+.llm-msg:has(.card) {
+    width: 95% !important;
+    max-width: 95% !important;
+}
+
+/* 最兼容的方案：通过特定的CSS类来标识表格容器 */
+.llm-msg.chat-table-container {
+    width: 95% !important;
+    max-width: 95% !important;
+    min-width: 95% !important;  /* 确保最小宽度也固定 */
+}
+
+/* Alternative selector for broader browser support */
+.llm-msg .card .collapse {
+    transition: height 0.3s ease;  /* 只过渡高度，不影响宽度 */
+}
+
+/* 确保卡片头部和表格始终保持全宽 */
+.llm-msg .card {
+    width: 100% !important;
+}
+
+.llm-msg .card-header {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+.llm-msg .card-body {
+    width: 100% !important;
+    box-sizing: border-box;
+}
+
+/* 确保表格容器保持全宽 */
+.llm-msg .dash-table-container {
+    width: 100% !important;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .llm-msg:has([id*="chat-type-compare-bubble"]) {
+        width: 95% !important;
+        max-width: 95% !important;
+    }
+    
+    .llm-msg.chat-table-container {
+        width: 95% !important;
+        max-width: 95% !important;
+        min-width: 95% !important;
+        margin: 5px 5px 5px 5px;  /* 保持一致的边距 */
+    }
+}

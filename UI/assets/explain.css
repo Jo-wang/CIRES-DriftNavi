@@ -1,0 +1,122 @@
+/* 
+ * Styling for the Explain component
+ * This includes styles for the Markdown content rendered in the analysis section
+ */
+
+/* Markdown content styling */
+.explain-markdown-content {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* Headings in Markdown */
+.explain-markdown-content h1,
+.explain-markdown-content h2,
+.explain-markdown-content h3,
+.explain-markdown-content h4 {
+    color: #614385;
+    margin-top: 1.2em;
+    margin-bottom: 0.8em;
+    font-weight: 600;
+}
+
+.explain-markdown-content h1 { font-size: 1.8em; }
+.explain-markdown-content h2 { font-size: 1.5em; }
+.explain-markdown-content h3 { font-size: 1.3em; }
+.explain-markdown-content h4 { font-size: 1.1em; }
+
+/* Lists in Markdown */
+.explain-markdown-content ul,
+.explain-markdown-content ol {
+    padding-left: 2em;
+    margin-bottom: 1em;
+}
+
+.explain-markdown-content li {
+    margin-bottom: 0.5em;
+}
+
+/* Code blocks in Markdown */
+.explain-markdown-content code {
+    background-color: #f0f0f0;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+.explain-markdown-content pre {
+    background-color: #f5f5f5;
+    padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+    border: 1px solid #ddd;
+}
+
+/* Tables in Markdown */
+.explain-markdown-content table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.explain-markdown-content th,
+.explain-markdown-content td {
+    border: 1px solid #ddd;
+    padding: 0.5em;
+    text-align: left;
+}
+
+.explain-markdown-content th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.explain-markdown-content tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Blockquotes in Markdown */
+.explain-markdown-content blockquote {
+    border-left: 4px solid #614385;
+    padding-left: 1em;
+    margin-left: 0;
+    color: #555;
+    font-style: italic;
+}
+
+/* Links in Markdown */
+.explain-markdown-content a {
+    color: #516395;
+    text-decoration: none;
+}
+
+.explain-markdown-content a:hover {
+    text-decoration: underline;
+}
+
+/* Emphasis in Markdown */
+.explain-markdown-content em {
+    font-style: italic;
+}
+
+.explain-markdown-content strong {
+    font-weight: bold;
+    color: #614385;
+}
+
+/* Horizontal rule in Markdown */
+.explain-markdown-content hr {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 1.5em 0;
+}
+
+/* Image styling */
+.explain-markdown-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+    border-radius: 5px;
+}

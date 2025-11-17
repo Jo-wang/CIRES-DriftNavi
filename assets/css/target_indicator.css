@@ -1,0 +1,121 @@
+/* 
+ * Target Attribute Indicator Styles
+ * 
+ * These styles define the appearance of the target attribute indicator component
+ * that serves as a visual anchor throughout the analysis pipeline.
+ */
+
+.target-attribute-indicator {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    margin: 10px 0;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+.target-attribute-indicator:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.target-indicator-main {
+    position: relative;
+    padding-right: 30px; /* Space for the expand button */
+}
+
+.target-name {
+    font-weight: 600;
+    color: #614385;
+    font-size: 1.1rem;
+}
+
+.target-type {
+    font-size: 0.85rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.quick-stat {
+    font-size: 0.85rem;
+    padding: 3px 0;
+}
+
+.stat-label {
+    color: #6c757d;
+}
+
+.stat-value {
+    font-weight: 500;
+    color: #333;
+}
+
+.expand-button {
+    background: none;
+    border: none;
+    color: #6c757d;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    transition: transform 0.3s ease;
+}
+
+.expand-button:hover {
+    color: #333;
+}
+
+.target-details {
+    margin-top: 10px;
+    border-top: 1px solid #dee2e6;
+    padding-top: 10px;
+    display: none; /* Hidden by default */
+}
+
+.stats-table {
+    font-size: 0.85rem;
+}
+
+/* Show active focus on the indicator when in explain mode */
+.explain-active .target-attribute-indicator {
+    border-color: #614385;
+    background-color: #f5f1f9;
+}
+
+/* Styling for pipeline stage indicators */
+.pipeline-stage {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.stage-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #dee2e6;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.stage-active {
+    background-color: #614385;
+}
+
+.stage-label {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-right: 10px;
+}
+
+.stage-active-label {
+    font-weight: 600;
+    color: #614385;
+}
+
+.stage-connector {
+    flex: 1;
+    height: 2px;
+    background-color: #dee2e6;
+    margin: 0 5px;
+}
